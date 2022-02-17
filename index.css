@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Source Serif Pro", serif;
+  background-color: rgb(253, 250, 250);
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  background-color: rgb(218, 218, 218, 0.1);
+}
+.container {
+  width: 100%;
+  margin: auto;
+  max-width: 1100px;
+  height: 4rem;
+
+  /* border: 1px solid rgb(172, 169, 169);
+    padding-left: 11.4rem;
+    padding-right: 11.4rem;
+    padding-bottom: 1rem; */
+}
+.main {
+  background-color: rgb(243, 242, 242);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  border-bottom: 1px solid rgb(209, 207, 207);
+}
+.leftHeader {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(243, 242, 242);
+}
+.mainHeading {
+  margin-top: 1rem;
+  background-color: rgb(243, 242, 242);
+}
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+}
+.imageLogo {
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-top: -0.5rem;
+  background-color: rgb(243, 242, 242);
+}
+.imageLogo1 {
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-top: -0.5rem;
+}
+.hamburgerMenulogo {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.rightHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-top: -4.7rem;
+  background-color: rgb(243, 242, 242);
+}
+.rightHeader div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(243, 242, 242);
+}
+.rightHeader h3 {
+  margin-top: 1rem;
+  padding: 1rem;
+  margin-left: 0.3rem;
+  cursor: pointer;
+  background-color: rgb(243, 242, 242);
+}
+
+/* .rightHeader img {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-bottom: 1.2rem;
+    padding-top: 1.1rem;
+    background-color: rgb(187, 181, 181);
+  } */
+
+.searchButton a {
+  color: white;
+}
+.rightHeader h3:hover {
+  background-color: rgb(218, 218, 218);
+  border-radius: 3rem;
+}
+
+.landingImage {
+  margin: auto;
+  max-width: 1200px;
+}
+
+.landingImage img {
+  width: 100%;
+  max-width: 1600px;
+  height: auto;
+  border-radius: 20px;
+  margin-top: 1rem;
+}
+
+.inputField {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 200px; */
+}
+.inputField1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 200px; */
+}
+
+.inputField input {
+  position: absolute;
+  z-index: 1;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  width: 50%;
+  height: 54px;
+  margin-left: 0rem;
+  border: rgb(238, 232, 232) 1px solid;
+  box-shadow: 1px 0px 10px 1px rgb(116, 114, 114);
+  border-radius: 20px;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  padding-left: 2rem;
+  margin-top: 650px;
+}
+.inputField1 input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40rem;
+  height: 4rem;
+  border: rgb(238, 232, 232) 1px solid;
+  box-shadow: 1px 0px 10px 1px rgb(116, 114, 114);
+  border-radius: 20px;
+  font-size: 1.5rem;
+  padding-left: 2rem;
+  margin-top: 150px;
+}
+.inputField button {
+  position: absolute;
+  z-index: 1;
+  margin-top: 50%;
+  margin-left: 450px;
+  margin-right: -450px;
+}
+.inputField1 button {
+  display: none;
+}
+
+.inputField input:focus {
+  outline: none;
+}
+.inputField1 input:focus {
+  outline: none;
+}
+::placeholder {
+  padding-left: 0rem;
+  color: rgb(34, 41, 41);
+  font-size: 1rem;
+}
+.searchButton {
+  width: 90px;
+  height: 50px;
+  background-color: rgb(62, 10, 131);
+  border: none;
+  cursor: pointer;
+  color: aliceblue;
+  border-radius: 7px;
+}
+.searchButton:hover {
+  background-color: rgb(134, 79, 206);
+}
+
+.searchResult {
+  margin: auto;
+  max-width: 1100px;
+}
+
+.searchdata {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  font-size: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+.searchResult {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dataSection {
+  border: 1px solid rgb(206, 206, 206);
+  box-shadow: 1px 1px 4px 1px rgb(219, 219, 219);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  height: 17rem;
+  width: 17rem;
+  padding: 1rem;
+}
+.dataSection p {
+  text-align: center;
+}
+.footer {
+  background-color: black;
+  margin-top: 1rem;
+}
+.footer h2 {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  background-color: black;
+  color: white;
+}
