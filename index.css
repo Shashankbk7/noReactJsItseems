@@ -298,7 +298,7 @@ a {
 .contact-right {
   flex-basis: 60%;
   padding: 40px;
-  background-color: rgb(0, 0, 0);
+  background-color: #494949;
   color: #fff;
 }
 h1 {
@@ -311,6 +311,11 @@ h1 {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+}
+.input-group input {
+  border: 1px solid black;
+  width: 170px;
+  height: 27px;
 }
 .input-row .input-group {
   flex-basis: 45%;
@@ -353,10 +358,10 @@ textarea {
 table,
 th,
 td {
-  background-color: #000000;
+  background-color: #494949;
 }
 .contact-right h3 {
-  background-color: #000000;
+  background-color: #494949;
   font-weight: 600;
   margin-bottom: 30px;
 }
@@ -368,7 +373,7 @@ tr td {
 }
 tr,
 td {
-  background-color: #000000;
+  background-color: #494949;
 }
 
 .section {
