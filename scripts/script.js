@@ -32,7 +32,7 @@ inputSearchButtonSelector.addEventListener(
     getRequest(searchInputSelectorValue);
     ///for now i have added window object to redirect to results page
 
-    // window.location.href = "/referencePages/searchResult.html";
+    window.location.href = "/referencePages/searchResult.html";
 
     //Fetch Api Get Request
   }
