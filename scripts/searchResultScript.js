@@ -1,6 +1,3 @@
-const { data } = require("./script.js");
-
-console.log(data);
 const restaurantData = [
   { data: "Nagarabhavi", info: "Lorem ipsum dolor sit amet consectetur" },
   { data: "data2", info: "Lorem ipsum dolor sit amet consectetur" },

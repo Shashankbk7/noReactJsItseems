@@ -1,10 +1,16 @@
 // //api
 const getRequest = async (x) => {
+  const array = [];
   const response = await fetch(
     `https://bangalore-adda-default-rtdb.firebaseio.com/${x}.json`
   );
   const data = await response.json();
-  module.exports = { data };
+  console.log(data);
+  console.log(data);
+  array.push(array);
+  array.forEach((x) => {
+    localStorage.setItem("data", data[x]);
+  });
 };
 
 //Selects button Button
@@ -25,7 +31,8 @@ inputSearchButtonSelector.addEventListener(
     }
     getRequest(searchInputSelectorValue);
     ///for now i have added window object to redirect to results page
-    window.location.href = "/referencePages/searchResult.html";
+
+    // window.location.href = "/referencePages/searchResult.html";
 
     //Fetch Api Get Request
   }
