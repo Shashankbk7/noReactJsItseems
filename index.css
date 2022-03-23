@@ -484,3 +484,9 @@ td {
 .contact-left h3 {
   font-size: 1.5rem;
 }
+.dataSection img {
+  width: 250px;
+  height: 140px;
+  margin: 1rem;
+  box-shadow: 1px 0px 10px 1px rgb(116, 114, 114);
+}

@@ -23,30 +23,41 @@ inputSearchButtonSelector.addEventListener(
     if (searchInputSelectorValue == "" || null) {
       alert("Enter the Area Name");
     }
-    getRequest(searchInputSelectorValue);
+
+    if (isNaN(searchInputSelectorValue) == false) {
+      document.getElementById("searchInputText").style.borderColor = "Red";
+
+      document.getElementsByClassName("searchInput")[0].value =
+        "we couldn't understand what you mean try again! ";
+      document.getElementsByClassName("searchInput")[0].style.color = "black";
+      setTimeout(() => {
+        document.getElementsByClassName("searchInput")[0].value = "";
+        document.getElementsByClassName("searchInput")[0].style.color = "black";
+      }, 3000);
+    } else {
+      getRequest(searchInputSelectorValue);
+    }
+
     ///for now i have added window object to redirect to results page
 
     //Fetch Api Get Request
   }
 );
 
-// const restaurantData = [
-//   { data: "Nagarabhavi", info: "Lorem ipsum dolor sit amet consectetur" },
-//   { data: "data2", info: "Lorem ipsum dolor sit amet consectetur" },
-//   { data: "data3", info: "Lorem ipsum dolor sit amet consectetur" },
-//   { data: "data4", info: "Lorem ipsum dolor sit amet consectetur" },
-//   { data: "data5", info: "Lorem ipsum dolor sit amet consectetur" },
-//   { data: "data6", info: "Lorem ipsum dolor sit amet consectetur" },
-//   { data: "data7", info: "Lorem ipsum dolor sit amet consectetur" },
-//   { data: "data8", info: "Lorem ipsum dolor sit amet consectetur" },
-//   { data: "data9", info: "Lorem ipsum dolor sit amet consectetur" },
-//   { data: "data10", info: "Lorem ipsum dolor sit amet consectetur" },
-// ];
 const domInserter = (restaurantData) => {
   const parsedResult = [];
 
+  console.log(restaurantData);
   if (restaurantData == null) {
-    alert("Area Not Found");
+    document.getElementById("searchInputText").style.borderColor = "Red";
+
+    document.getElementsByClassName("searchInput")[0].value =
+      "Currently Not Serving this Area";
+    document.getElementsByClassName("searchInput")[0].style.color = "black";
+    setTimeout(() => {
+      document.getElementsByClassName("searchInput")[0].value = "";
+      document.getElementsByClassName("searchInput")[0].style.color = "black";
+    }, 3000);
   }
 
   for (var item in restaurantData) {
@@ -63,6 +74,8 @@ const domInserter = (restaurantData) => {
     //Adds a classname to newely created div Element
     resultSectionCreator.classList.add("dataSection");
 
+    const imageInserter = document.createElement("img");
+    imageInserter.src = parsedResult[i].image;
     //creates h1 tag to store data field
     const dataSectionCreaterDataField = document.createElement("h1");
     //creates a class name based on restaurant data for api usage*
@@ -73,6 +86,7 @@ const domInserter = (restaurantData) => {
     dataSectionCreaterDataField.appendChild(dataInserter);
 
     //inserts the h1 element to the parent node (div)
+    resultSectionCreator.appendChild(imageInserter);
     resultSectionCreator.appendChild(dataSectionCreaterDataField);
     //inserts the div node to its parent node (div)
     resultSectionSelector.appendChild(resultSectionCreator);
@@ -83,6 +97,7 @@ const domInserter = (restaurantData) => {
     const informationInserter = document.createTextNode(
       parsedResult[i].address
     );
+
     //appends the data field (Value) to the newely created Element
     dataSectionCreaterInformationField.appendChild(informationInserter);
 
@@ -96,7 +111,7 @@ const domInserter = (restaurantData) => {
 
   document.querySelectorAll(".dataSection").forEach((item) => {
     item.addEventListener("click", function () {
-      console.log(item.firstChild.classList.value);
+      console.log(item.children[1].innerHTML);
       //API needs to be implemented
     });
   });

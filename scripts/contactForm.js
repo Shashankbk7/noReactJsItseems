@@ -11,17 +11,17 @@ contactButton.addEventListener("click", (e) => {
   contactMessage = document.getElementById("contactMessage").value;
   console.log(contactEmail);
 
-  if (
-    contactName ||
-    contactEmail ||
-    contactPhone ||
-    contactMessage == "" ||
-    null ||
-    undefined
-  ) {
-    alert("Error");
-    return false;
-  }
+  //   if (
+  //     contactName ||
+  //     contactEmail ||
+  //     contactPhone ||
+  //     contactMessage == "" ||
+  //     null ||
+  //     undefined
+  //   ) {
+  //     alert("Error");
+  //     return false;
+  //   }
   if (contactPhone.length > 10) {
     alert("Invalid Phone Number");
     document.getElementById("contactPhone").value = " ";
