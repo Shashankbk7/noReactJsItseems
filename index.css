@@ -110,7 +110,7 @@ a {
   max-width: 1600px;
   height: auto;
   border-radius: 20px;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 .rightHeader h3:hover {
   background-color: rgb(218, 218, 218);
@@ -339,7 +339,7 @@ textarea {
   display: block;
   color: #161616;
 }
-.btn {
+.contactButton {
   background: rgb(0, 0, 0);
   width: 100px;
   border: none;
@@ -474,4 +474,13 @@ td {
   .content-section .social {
     text-align: center;
   }
+}
+
+.input-group input {
+  padding: 0.25rem;
+  margin-top: 0.5rem;
+  width: 200px;
+}
+.contact-left h3 {
+  font-size: 1.5rem;
 }

@@ -25,33 +25,45 @@
       <p></p>
       <div class="contact-box">
         <div class="contact-left">
-          <h3>Sent your request</h3>
+          <h3>Send your request</h3>
           <form action="">
             <div class="input-row">
               <div class="input-group">
                 <label>Name</label>
-                <input type=" text" placeholder="Enter Your Name" />
+                <input
+                  type=" text"
+                  id="contactName"
+                  placeholder="Enter Your Name"
+                />
               </div>
               <div class="input-group">
                 <label>Phone</label>
-                <input type="number" placeholder="Enter Your Number" />
+                <input
+                  type="tel"
+                  placeholder="Enter Your Number"
+                  id="contactPhone"
+                  pattern="[7-9]{1}[0-9]{9}"
+                />
               </div>
             </div>
             <div class="input-row">
               <div class="input-group">
                 <label>Email</label>
-                <input type="email" placeholder="Enter Your Email" />
-              </div>
-              <div class="input-group">
-                <label>Phone</label>
-                <input type="number" placeholder="Enter your Query" />
+                <input
+                  type="email"
+                  id="contactEmail"
+                  placeholder="Enter Your Email"
+                />
               </div>
             </div>
 
-            <label>Message </label> <br />
-            <textarea rows="5" placeholder="Your Message"> </textarea>
+            <label>Message </label>
+            <br />
+            <br />
+            <textarea id="contactMessage" rows="7" placeholder="Your Message">
+            </textarea>
             <br /><br />
-            <button class="btn" type="submit">SEND</button>
+            <button class="contactButton" type="submit">SEND</button>
           </form>
         </div>
         <div class="contact-right">
@@ -74,4 +86,5 @@
       </div>
     </div>
   </body>
+  <script src="../scripts/contactForm.js"></script>
 </html>
