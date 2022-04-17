@@ -44,6 +44,36 @@ a {
 .mainHeading1 {
   margin-top: 0.5rem;
 }
+.myDrop {
+  height: 60px;
+  overflow: auto;
+}
+.category {
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 48rem;
+  background-color: rgba(0, 0, 0, 0);
+}
+.category h2 {
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+}
+
+.heading {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32rem;
+  color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 2.5rem;
+}
 .head {
   display: flex;
   align-items: center;
@@ -128,6 +158,9 @@ a {
   /* height: auto; */
   border-radius: 20px;
   margin-top: 1rem;
+  opacity: 0.9;
+
+  filter: brightness(50%);
 }
 
 .inputField {
@@ -153,8 +186,8 @@ a {
   /* display: flex;
   align-items: center;
   justify-content: center; */
-  width: 50%;
-  height: 54px;
+  width: 40%;
+  height: 47px;
   margin-left: 0rem;
   border: rgb(238, 232, 232) 1px solid;
   box-shadow: 1px 0px 10px 1px rgb(116, 114, 114);
@@ -162,7 +195,7 @@ a {
   font-size: 1.5rem;
   padding: 0.5rem;
   padding-left: 2rem;
-  margin-top: 650px;
+  margin-top: 640px;
 }
 
 .inputField1 input {
@@ -183,7 +216,7 @@ a {
 .inputField button {
   position: absolute;
   z-index: 1;
-  margin-top: 800px;
+  margin-top: 900px;
   /* margin-top: 50%;
   margin-left: 450px;
   margin-right: -450px; */
@@ -204,6 +237,7 @@ a {
   font-size: 1rem;
 }
 .searchButton {
+  position: absolute;
   width: 90px;
   height: 50px;
   background-color: rgb(62, 10, 131);
@@ -211,6 +245,8 @@ a {
   cursor: pointer;
   color: aliceblue;
   border-radius: 7px;
+
+  margin-top: 10rem;
 }
 .searchButton:hover {
   background-color: rgb(134, 79, 206);

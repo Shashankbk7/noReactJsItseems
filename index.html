@@ -31,35 +31,58 @@
 
 
     <Landing>
+      
         <div class="searchBoxContainer">
+          
             <div class="inputField">
+              <h1 class="heading">Discover the best food in and around your Area</h1>
               <input
                 id="searchInputText"
                 type="text"
                 class="searchInput"
-                placeholder="Search for Area"
+                placeholder="Enter Your Location"
+                list="restaurantName"
               />
+              <div id="category" class="category">
+                <h2 id="South">South Indian</h2>
+                <h2 id="North">North Indian</h2>
+                
+              </div>
+
+              <datalist class="myDrop" id="restaurantName">
+                <option value="Pattabhiramnagar">
+                <option value="Byrasandra">
+                <option value="J.P.Nagar">
+                <option value="33rdCross">
+                <option value="16thMAIN">
+                <option value="PavillionRoad">
+                <option value="RKColony">
+                <option value="MGlayout">
+                <option value="22ndcrossroad">
+              </datalist>
+
               <!-- <a href="./reference Pages/searchResult.html">
                 <button class="searchButton" >
                   Search
                </button>
               </a>
              -->
-                <button class="searchButton" >
+
+                <button id="btnCode" class="searchButton" >
                   Search
                </button>
-    
+
             </div>
           </div>
           <div class="landingImage">
-            <img src="assets/cooking-food.jpg" alt="landingPageImage" />
+            <img src="assets/image.jpg" alt="landingPageImage" />
           </div>
     </Landing>
     <SearchResult class="result" id="searchResult">
       <h2 class="searchdata">Search Results</h2>
       <div class="searchResult">
           </div>
-      
+
 
   </SearchResult>
 
