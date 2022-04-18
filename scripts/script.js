@@ -4,7 +4,7 @@ document.getElementById("category").style.display = "None";
 const getRequest = async (x, loc) => {
   let southAPI = "http://127.0.0.1:8080/southIndian.php";
   let northAPI = "http://127.0.0.1:8080/northIndian.php";
-  console.log(loc);
+
   const response = await fetch(loc == "South Indian" ? southAPI : northAPI);
   let data = await response.json();
 
@@ -13,11 +13,16 @@ const getRequest = async (x, loc) => {
     data[i].restaurantDistance = result;
   }
   const sortedData = data.sort((a, b) => {
-    a.restaurantDistance - b.restaurantDistance;
+    if (a.restaurantDistance < b.restaurantDistance) {
+      return -1;
+    }
+    if (a.restaurantDistance > b.restaurantDistance) {
+      return 1;
+    }
+    return 0;
   });
-  console.log(sortedData);
 
-  domInserter(data);
+  domInserter(sortedData);
 };
 
 const places =
@@ -118,19 +123,21 @@ inputSearchButtonSelector.addEventListener(
       document.getElementById("category").style.display = "flex";
       document.getElementById("searchInputText").style.display = "None";
       document.getElementById("btnCode").style.display = "None";
+      document.querySelector(".heading").style.display = "None";
+
       document.getElementById("South").addEventListener("click", (e) => {
         e.preventDefault();
         getRequest(searchInputSelectorValue, e.target.innerHTML);
+        const x = document.getElementById("searchResult");
+        x.scrollIntoView();
       });
       document.getElementById("North").addEventListener("click", (e) => {
         e.preventDefault();
         getRequest(searchInputSelectorValue, e.target.innerHTML);
+        const x = document.getElementById("searchResult");
+        x.scrollIntoView();
       });
     }
-
-    ///for now i have added window object to redirect to results page
-
-    //Fetch Api Get Request
   }
 );
 
@@ -172,28 +179,54 @@ const domInserter = (restaurantData) => {
 
     const imageInserter = document.createElement("img");
     imageInserter.src = parsedResult[i].restaurantImage;
+    resultSectionCreator.appendChild(imageInserter);
     //creates h1 tag to store data field
+
+    const menuHeading = document.createElement("h2");
+    const menuHeadingDataField = document.createTextNode("Menu");
+    menuHeading.classList.add("menuHead");
+    menuHeading.appendChild(menuHeadingDataField);
+    menuHeading.style.display = "None";
+    menuHeading.style.color = "black";
+    menuHeading.style.textAlign = "center";
+
+    resultSectionCreator.appendChild(menuHeading);
+
     const dataSectionCreaterDataField = document.createElement("h2");
     //creates a class name based on restaurant data for api usage*
     dataSectionCreaterDataField.classList.add(parsedResult[i].restaurantId);
     dataSectionCreaterDataField.style.textAlign = "center";
+
     //Creates Text Node to insert the data to newely created h1 Element
     const dataInserter = document.createTextNode(
       parsedResult[i].restaurantName
     );
+
     //appends the data field (Value) to the newely created Element
     dataSectionCreaterDataField.appendChild(dataInserter);
 
     //inserts the h1 element to the parent node (div)
-    resultSectionCreator.appendChild(imageInserter);
+
     resultSectionCreator.appendChild(dataSectionCreaterDataField);
     //inserts the div node to its parent node (div)
     resultSectionSelector.appendChild(resultSectionCreator);
 
-    const distanceSectionCreator = document.createElement("h4");
-    const distanceInserter = document.createTextNode(
-      parsedResult[i].restaurantDistance
+    const menuSectionCreater = document.createElement("h3");
+    menuSectionCreater.classList.add("menu");
+    menuSectionCreater.style.textAlign = "center";
+    menuSectionCreater.style.display = "None";
+    const menuInserter = document.createTextNode(
+      parsedResult[i].restaurantMenu
     );
+    menuSectionCreater.appendChild(menuInserter);
+    resultSectionCreator.appendChild(menuSectionCreater);
+
+    const distanceSectionCreator = document.createElement("h4");
+    distanceSectionCreator.classList.add("distance");
+    const distanceInserter = document.createTextNode(
+      `${parsedResult[i].restaurantDistance} Km`
+    );
+
     distanceSectionCreator.appendChild(distanceInserter);
     resultSectionCreator.appendChild(distanceSectionCreator);
     //creates p element to store information field
@@ -217,7 +250,17 @@ const domInserter = (restaurantData) => {
 
   document.querySelectorAll(".dataSection").forEach((item) => {
     item.addEventListener("click", function () {
-      console.log(item.children[1].innerHTML);
+      item.children[2].style.display = "None";
+      item.children[4].style.display = "None";
+      item.children[3].style.display = "Block";
+      item.children[5].style.display = "None";
+      item.children[0].style.display = "Block";
+      item.children[1].style.display = "Block";
+
+      // window.open(
+      //   `https://www.google.com/search?q=${item.children[1].innerHTML}`,
+      //   "_blank"
+      // );
 
       //API needs to be implemented
     });
